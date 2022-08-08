@@ -14,21 +14,18 @@ export default class Dashboard extends React.Component {
         this.bid = this.bid.bind(this);
     }
 
-
     componentDidMount(){
         
         let id = window.prompt('Please! Your user id:', 0);    
         this.setState({userId: id});
 
-    
         user_api.get('/api/User/'+parseInt(id))
         .then(res => {
             const user = res.data;
             this.setState({userName: user.name});
-            //alert("Bem Vindo "+user.name+"!");
         });
 
-        auction_api.get('/api/Auction?tenantId=3')
+        auction_api.get('/api/Auction?tenantId=1')
         .then(res => {
             const aucts = res.data;
             this.setState({auctions: aucts});
