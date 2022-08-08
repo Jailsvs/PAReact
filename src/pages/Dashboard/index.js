@@ -64,7 +64,7 @@ export default class Dashboard extends React.Component {
     
     async bid(auctionId) {
         try {
-           let response = await auction_api.post('/api/Auction/'+auctionId+'/bid?tenantId=3', { 'UserId': parseInt(this.state.userId), 'AuctionProductId': auctionId  });
+           let response = await auction_api.post('/api/Auction/'+auctionId+'/bid?tenantId=1', { 'UserId': parseInt(this.state.userId), 'AuctionProductId': auctionId  });
             console.log('👉 Returned data:', response);
           } catch (e) {
             console.log(`😱 Axios bid request failed: ${e}`);
